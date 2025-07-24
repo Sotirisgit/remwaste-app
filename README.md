@@ -1,6 +1,9 @@
 # RemWaste - Item Management Application
 
-A full-stack web application for managing items with automated testing suite. Built with React frontend and Node.js backend, featuring comprehensive UI and API test automation.
+[![Tests](https://github.com/Sotirisgit/remwaste-app/actions/workflows/test.yml/badge.svg)](https://github.com/Sotirisgit/remwaste-app/actions/workflows/test.yml)
+[![Live Demo](https://img.shields.io/badge/Demo-Live-brightgreen)](https://remwaste-frontend.onrender.com)
+
+A full-stack web application for managing items with automated testing suite. Built with React frontend and Node.js backend, featuring comprehensive UI and API test automation with CI/CD pipeline.
 
 ## 🚀 Live Application
 
@@ -111,9 +114,11 @@ npm run build               # Build for production
 ```bash
 npm run test:api            # Run API tests with Jest
 npm run test:api:watch      # API tests in watch mode
+npm run test:api:coverage   # API tests with coverage report
 npm run cypress:open        # Open Cypress UI for interactive testing
 npm run test:e2e           # Run UI tests headlessly
 npm run test:all           # Run both API and UI tests
+npm run test:all:coverage  # Run all tests with coverage
 ```
 
 ## 🔧 Configuration
@@ -164,7 +169,8 @@ UI Tests: All scenarios passing
 - **UI Testing**: Cypress (E2E automation)
 - **API Testing**: Jest + Supertest
 - **Test Reports**: Built-in Jest/Cypress reporting
-- **CI Ready**: GitHub Actions compatible
+- **Code Coverage**: Jest coverage reports with HTML/LCOV output
+- **CI/CD**: GitHub Actions pipeline with automated testing
 
 ## 🚨 Troubleshooting
 
@@ -197,6 +203,29 @@ The application uses these configurations:
 - **Frontend URL**: https://remwaste-frontend.onrender.com
 - **Backend URL**: https://remwastebackend.onrender.com
 - **Test Timeout**: 30 seconds
+
+## 🚀 CI/CD Pipeline
+
+This project includes a comprehensive GitHub Actions pipeline that runs on every push and pull request:
+
+### Pipeline Jobs
+- **API Tests**: Jest/Supertest tests with coverage reporting
+- **UI Tests**: Cypress E2E tests with video/screenshot capture
+- **Code Quality**: Coverage analysis and reporting
+- **Deployment Check**: Health checks for live frontend/backend
+- **Test Summary**: Consolidated results and artifacts
+
+### Viewing Results
+- Check the **Actions** tab in GitHub for detailed test results
+- Coverage reports are uploaded as artifacts
+- Cypress videos/screenshots available for failed UI tests
+- Status badges show current build status
+
+### Local Coverage Reports
+```bash
+npm run test:api:coverage    # Generate coverage report
+open coverage/lcov-report/index.html    # View in browser
+```
 
 ## 📝 Test Documentation
 
