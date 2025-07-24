@@ -59,7 +59,7 @@ For UI automation, I chose Cypress because it is a modern, developer-friendly te
 - Easy to set up and works great with **Node.js** apps
 - Tests include clear reporting and support for checking code coverage
 
-## Test Execution
+## 4. Test Execution
 
 ### Running Tests Locally
 
@@ -99,34 +99,33 @@ npm run test:api:watch
 npm run test:all
 ```
 
+## 5. Any assumptions or limitations
+
 Test Data Management
 
-  - API Tests: I use timestamps in test data so tests don't conflict with each other
-  - UI Tests: Clear browser storage before each test to start fresh
   - Login Info: All tests use username: remwaste, password: 12345
 
-  Test Results Summary
+Test Results Summary
 
   API Tests (20 total)
   Login Tests (7): Testing login with good/bad passwords, missing fields, etc
   Item Tests (12): Testing create, read, update, delete for items
   Full Workflow (1): Testing the complete user journey
 
-  UI Tests
+UI Tests
   = Login: Testing login forms, error messages, logout button
   - Item Management: Testing add/edit/delete buttons through the website
   - Page Navigation: Making sure users can't access pages without logging in
   - Error Messages: Checking that error messages show up correctly
 
-  Problems/Limitations
+Problems/Limitations
 
   - Data Cleanup: The tests create data but don't delete it afterward
   - Running Tests Together: If someone else runs tests at the same time, they might interfere
   - Only Works Online: Tests fail if the backend server is down
   - Browser Support: Only tested on Chrome-like browsers
-  - Tested on pc chrome browser only
 
-  Future work
+Future work
 
   - Add cleanup so tests don't leave junk data behind
   - Test on Firefox and Safari too
