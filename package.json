@@ -14,7 +14,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test:e2e": "cypress run --headless",
+    "test:e2e:open": "cypress open",
+    "test:api": "jest tests/api --testTimeout=30000",
+    "test:api:watch": "jest tests/api --watch --testTimeout=30000",
+    "test:all": "npm run test:api && npm run test:e2e"
   },
   "eslintConfig": {
     "extends": [
@@ -34,6 +41,15 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^14.5.2"
+    "cypress": "^14.5.2",
+    "jest": "^27.5.1",
+    "supertest": "^7.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ],
+    "verbose": true
   }
 }

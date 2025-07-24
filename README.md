@@ -1,70 +1,227 @@
-# Getting Started with Create React App
+# RemWaste - Item Management Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack web application for managing items with automated testing suite. Built with React frontend and Node.js backend, featuring comprehensive UI and API test automation.
 
-## Available Scripts
+## 🚀 Live Application
 
-In the project directory, you can run:
+- **Frontend**: https://remwaste-frontend.onrender.com
+- **Backend API**: https://remwastebackend.onrender.com
 
-### `npm start`
+## 📋 Application Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **User Authentication**: Secure login/logout functionality
+- **Item Management**: Create, read, update, and delete items
+- **Real-time Updates**: Dynamic UI updates without page refresh
+- **Responsive Design**: Works on desktop and mobile devices
+- **JWT Authentication**: Token-based API security
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Demo Credentials
+- **Username**: `remwaste`
+- **Password**: `12345`
 
-### `npm test`
+## 🧪 Testing Suite
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project includes comprehensive automated testing:
 
-### `npm run build`
+### UI Automation (Cypress)
+- ✅ Login/logout scenarios with valid/invalid credentials
+- ✅ Item CRUD operations through the user interface
+- ✅ Form validation and error handling
+- ✅ Navigation and route protection
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### API Automation (Jest + Supertest)
+- ✅ Authentication endpoint testing
+- ✅ All CRUD API endpoints with positive/negative cases
+- ✅ Authorization and token validation
+- ✅ Integration workflows
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Test Coverage**: 20+ API tests, Multiple UI scenarios
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ⚡ Quick Start (< 2 minutes)
 
-### `npm run eject`
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
+- Git
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 1. Clone and Install
+```bash
+git clone https://github.com/Sotirisgit/remwaste-app.git
+cd remwaste-app
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2. Run Tests
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### API Tests (No additional setup required)
+```bash
+npm run test:api
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### UI Tests
+```bash
+# Terminal 1: Start the React app
+npm start
 
-## Learn More
+# Terminal 2: Run Cypress tests
+npm run cypress:open
+# OR headless mode
+npm run test:e2e
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### All Tests
+```bash
+npm start  # Keep this running
+npm run test:all  # In another terminal
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📁 Project Structure
 
-### Code Splitting
+```
+remwaste-app/
+├── src/
+│   ├── pages/
+│   │   ├── Login.js          # Login component
+│   │   └── Dashboard.js      # Main dashboard with CRUD
+│   ├── App.js               # Main app with routing
+│   └── index.js             # App entry point
+├── tests/
+│   └── api/                 # API test files
+│       ├── auth.test.js     # Authentication tests
+│       └── items.test.js    # Items CRUD tests
+├── cypress/
+│   ├── e2e/                 # UI test files
+│   │   ├── login.cy.js      # Login scenarios
+│   │   └── items-crud.cy.js # Item management tests
+│   └── support/
+│       └── commands.js      # Custom Cypress commands
+├── TEST_PLAN.md             # Comprehensive test strategy
+└── README.md               # This file
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🛠 Available Scripts
 
-### Analyzing the Bundle Size
+### Development
+```bash
+npm start                    # Run React app locally (localhost:3000)
+npm run build               # Build for production
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Testing
+```bash
+npm run test:api            # Run API tests with Jest
+npm run test:api:watch      # API tests in watch mode
+npm run cypress:open        # Open Cypress UI for interactive testing
+npm run test:e2e           # Run UI tests headlessly
+npm run test:all           # Run both API and UI tests
+```
 
-### Making a Progressive Web App
+## 🔧 Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Cypress Configuration
+- **Base URL**: Configurable for local/production testing
+- **Custom Commands**: Reusable test utilities
+- **Environment Variables**: Backend URL configuration
 
-### Advanced Configuration
+### API Testing
+- **Test Environment**: Node.js with Jest
+- **HTTP Client**: Supertest for API requests
+- **Timeout**: 30 seconds for API calls
+- **Target**: Live backend at remwastebackend.onrender.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📊 Test Execution Results
 
-### Deployment
+### Recent Test Results
+```
+API Tests: 20 passed, 0 failed
+- Authentication: 7 tests
+- Items CRUD: 12 tests  
+- Integration: 1 test
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+UI Tests: All scenarios passing
+- Login flows
+- Item management
+- Error handling
+- Navigation
+```
 
-### `npm run build` fails to minify
+## 🏗 Architecture
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Frontend (React)
+- **Framework**: Create React App
+- **Routing**: React Router DOM
+- **HTTP Client**: Axios
+- **State Management**: React Hooks (useState, useEffect)
+- **Authentication**: JWT tokens in localStorage
+
+### Backend (Node.js)
+- **Framework**: Express.js
+- **Authentication**: JWT-based
+- **Database**: SQLite/PostgreSQL (deployed)
+- **CORS**: Enabled for frontend communication
+
+### Testing Stack
+- **UI Testing**: Cypress (E2E automation)
+- **API Testing**: Jest + Supertest
+- **Test Reports**: Built-in Jest/Cypress reporting
+- **CI Ready**: GitHub Actions compatible
+
+## 🚨 Troubleshooting
+
+### Common Issues
+
+**1. Cypress tests fail to load**
+```bash
+# Ensure React app is running first
+npm start
+# Then run Cypress in another terminal
+npm run cypress:open
+```
+
+**2. API tests timeout**
+```bash
+# Check if backend is accessible
+curl https://remwastebackend.onrender.com/items
+# Should return: {"error":"No token provided"}
+```
+
+**3. Port already in use**
+```bash
+# Kill process on port 3000
+npx kill-port 3000
+npm start
+```
+
+### Environment Variables
+The application uses these configurations:
+- **Frontend URL**: https://remwaste-frontend.onrender.com
+- **Backend URL**: https://remwastebackend.onrender.com
+- **Test Timeout**: 30 seconds
+
+## 📝 Test Documentation
+
+For detailed testing strategy, coverage areas, and maintenance procedures, see [TEST_PLAN.md](./TEST_PLAN.md).
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Write tests for new functionality
+4. Ensure all tests pass: `npm run test:all`
+5. Submit a pull request
+
+## 📄 License
+
+This project is created for demonstration purposes as part of a technical assessment.
+
+## 🔗 Links
+
+- **Live Application**: https://remwaste-frontend.onrender.com
+- **GitHub Repository**: https://github.com/Sotirisgit/remwaste-app
+- **Backend API**: https://remwastebackend.onrender.com
+
+---
+
+**Time to Get Running**: < 2 minutes  
+**Last Updated**: July 2025  
+**Maintainer**: Sotiris
